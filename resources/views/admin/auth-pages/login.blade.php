@@ -16,6 +16,12 @@
             <div class="nk-block-des">
                 <p>Access the DashLite panel using your email and passcode.</p>
             </div>
+            @if(Session::has('msg'))
+            <div class="alert alert-danger alert-icon alert-dismissible">
+                <em class="icon ni ni-alert-circle"></em>
+                {{ session::get('msg') }} <button class="close" data-dismiss="alert"></button>
+            </div>
+            @endif
         </div>
     </div><!-- .nk-block-head -->
     <form action="{{ route('admin.login') }}" method="POST">
@@ -23,7 +29,7 @@
         <div class="form-group">
             <label class="form-label" for="email">Email or Username</label>
             <div class="form-control-wrap">
-                <input type="text" class="form-control form-control-lg" id="email" placeholder="Enter your email address or username">
+                <input type="text" name="email" class="form-control form-control-lg" id="email" placeholder="Enter your email address or username">
             </div>
         </div>
         <div class="form-group">
@@ -33,7 +39,7 @@
                     <em class="passcode-icon icon-show icon ni ni-eye"></em>
                     <em class="passcode-icon icon-hide icon ni ni-eye-off"></em>
                 </a>
-                <input type="password" class="form-control form-control-lg" id="password" placeholder="Enter your passcode">
+                <input type="password" name="password" class="form-control form-control-lg" id="password" placeholder="Enter your passcode">
             </div>
         </div>
 

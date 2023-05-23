@@ -17,9 +17,10 @@ class Admin
      */
     public function handle(Request $request, Closure $next)
     {
-        if (!Auth::guard('admin')) {
-            return redirect()->route('login_form')->with('error','Please Login');
+        if (!Auth::guard('admin')->check()) {
+            return redirect()->route('login_form')->with('msg','Please Login');
         }
+
         return $next($request);
     }
 }
