@@ -20,11 +20,18 @@ use App\Http\Controllers\AdminController;
 Route::prefix('admin')->group(function () {
 
     Route::get('/login', [AdminController::class, 'index'])->name('login_form');
+    Route::post('admin.login',[AdminController::class,'admin_login'])->name('admin.login');
     
 });
 
 Route::get('/test',function(){
     return view('admin.dashboard');
+});
+Route::get('/test2',function(){
+    return view('admin.auth-pages.register');
+});
+Route::get('/test3',function(){
+    return view('admin.auth-pages.login');
 });
 
 Route::get('/', function () {
