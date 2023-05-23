@@ -20,6 +20,11 @@ use App\Http\Controllers\AdminController;
 Route::prefix('admin')->group(function () {
 
     Route::get('/login', [AdminController::class, 'index'])->name('login_form');
+    
+});
+
+Route::get('/test',function(){
+    return view('admin.dashboard');
 });
 
 Route::get('/', function () {
