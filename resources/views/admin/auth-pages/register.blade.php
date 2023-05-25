@@ -18,17 +18,18 @@
             </div>
         </div>
     </div><!-- .nk-block-head -->
-    <form action="html/pages/auths/auth-success-v3.html">
+    <form action="{{ route('admin.register.create') }}" method="POST">
+        @csrf
         <div class="form-group">
             <label class="form-label" for="name">Name</label>
             <div class="form-control-wrap">
-                <input type="text" class="form-control form-control-lg" id="name" placeholder="Enter your name">
+                <input name="name" type="text" class="form-control form-control-lg" id="name" placeholder="Enter your name">
             </div>
         </div>
         <div class="form-group">
             <label class="form-label" for="email">Email or Username</label>
             <div class="form-control-wrap">
-                <input type="text" class="form-control form-control-lg" id="email" placeholder="Enter your email address or username">
+                <input name="email" type="text" class="form-control form-control-lg" id="email" placeholder="Enter your email address or username">
             </div>
         </div>
         <div class="form-group">
@@ -38,20 +39,20 @@
                     <em class="passcode-icon icon-show icon ni ni-eye"></em>
                     <em class="passcode-icon icon-hide icon ni ni-eye-off"></em>
                 </a>
-                <input type="password" class="form-control form-control-lg" id="password" placeholder="Enter your passcode">
+                <input name="password" type="password" class="form-control form-control-lg" id="password" placeholder="Enter your passcode">
             </div>
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
             <div class="custom-control custom-control-xs custom-checkbox">
                 <input type="checkbox" class="custom-control-input" id="checkbox">
                 <label class="custom-control-label" for="checkbox">I agree to Dashlite <a tabindex="-1" href="#">Privacy Policy</a> &amp; <a tabindex="-1" href="#"> Terms.</a></label>
             </div>
-        </div>
+        </div> -->
         <div class="form-group">
             <button class="btn btn-lg btn-primary btn-block">Register</button>
         </div>
     </form><!-- form -->
-    <div class="form-note-s2 pt-4"> Already have an account ? <a href="/test2"><strong>Sign in instead</strong></a>
+    <div class="form-note-s2 pt-4"> Already have an account ? <a href="{{route('login_form')}}"><strong>Sign in instead</strong></a>
     </div>
     <div class="text-center pt-4 pb-3">
         <h6 class="overline-title overline-title-sap"><span>OR</span></h6>

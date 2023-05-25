@@ -23,17 +23,10 @@ Route::prefix('admin')->group(function () {
     Route::post('admin.login', [AdminController::class, 'admin_login'])->name('admin.login');
     Route::get('dashboard', [AdminController::class, 'admin_dashboard'])->name('admin.dashboard')->middleware('admin');
     Route::get('logout', [AdminController::class, 'admin_logout'])->name('admin.logout');
+    Route::get('register', [AdminController::class, 'register'])->name('admin.register');
+    Route::post('register', [AdminController::class, 'admin_register'])->name('admin.register.create');
 });
 
-// Route::get('/test',function(){
-//     return view('admin.dashboard');
-// });
-Route::get('/test2', function () {
-    return view('admin.auth-pages.register');
-});
-Route::get('/test3', function () {
-    return view('admin.auth-pages.login');
-});
 
 Route::get('/', function () {
     return view('welcome');
