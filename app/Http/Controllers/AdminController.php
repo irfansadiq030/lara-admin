@@ -30,4 +30,10 @@ class AdminController extends Controller
     {
         return View('admin.dashboard');
     }
+
+    public function admin_logout(){
+        Auth::guard('admin')->logout();
+
+        return redirect()->route('login_form')->with('msg', 'Admin Logged Out');
+    }
 }

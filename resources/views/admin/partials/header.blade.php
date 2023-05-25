@@ -230,7 +230,7 @@
                                  </div>
                                  <div class="user-info d-none d-xl-block">
                                      <div class="user-status user-status-active">Administator</div>
-                                     <div class="user-name dropdown-indicator">Abu Bin Ishityak</div>
+                                     <div class="user-name dropdown-indicator">{{ Auth::guard('admin')->user()->name }}</div>
                                  </div>
                              </div>
                          </a>
@@ -241,8 +241,8 @@
                                          <span>AB</span>
                                      </div>
                                      <div class="user-info">
-                                         <span class="lead-text">Abu Bin Ishtiyak</span>
-                                         <span class="sub-text">info@softnio.com</span>
+                                         <span class="lead-text">{{ Auth::guard('admin')->user()->name }}</span>
+                                         <span class="sub-text">{{ Auth::guard('admin')->user()->email }}</span>
                                      </div>
                                  </div>
                              </div>
@@ -256,7 +256,7 @@
                              </div>
                              <div class="dropdown-inner">
                                  <ul class="link-list">
-                                     <li><a href="#"><em class="icon ni ni-signout"></em><span>Sign out</span></a></li>
+                                     <li><a href="{{ route('admin.logout') }}"><em class="icon ni ni-signout"></em><span>Sign out</span></a></li>
                                  </ul>
                              </div>
                          </div>
