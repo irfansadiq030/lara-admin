@@ -6,8 +6,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Admin;
+use App\Notifications\loggedInNotification;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Notification;
 
 class AdminController extends Controller
 {
@@ -21,6 +23,12 @@ class AdminController extends Controller
         // dd($request->input());
         $check = $request->all();
         if (Auth::guard('admin')->attempt(['email' => $check['email'], 'password' => $check['password']])) {
+
+
+            // Send email notification after the user logs in successfully.
+            $user = Auth::guard('admin')->user();
+            Notification::send($user, new loggedInNotification($user));
+
             return redirect()->route('admin.dashboard')->with('msg', 'Admin Logged in Successfully');
         } else {
             return back()->with('msg', 'Invalid Email or Password');

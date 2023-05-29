@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\mailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,8 @@ Route::prefix('admin')->group(function () {
     Route::get('register', [AdminController::class, 'register'])->name('admin.register');
     Route::post('register', [AdminController::class, 'admin_register'])->name('admin.register.create');
 });
+
+Route::get('/sendmail', [mailController::class, 'index']);
 
 
 Route::get('/', function () {
