@@ -34,30 +34,6 @@
                                <span class="nk-menu-text">Products</span>
                            </a>
                        </li><!-- .nk-menu-item -->
-                       <li class="nk-menu-item">
-                           <a href="html/ecommerce/customers.html" class="nk-menu-link">
-                               <span class="nk-menu-icon"><em class="icon ni ni-users-fill"></em></span>
-                               <span class="nk-menu-text">Customers</span>
-                           </a>
-                       </li><!-- .nk-menu-item -->
-                       <li class="nk-menu-item">
-                           <a href="html/ecommerce/supports.html" class="nk-menu-link">
-                               <span class="nk-menu-icon"><em class="icon ni ni-chat-fill"></em></span>
-                               <span class="nk-menu-text">Supports</span>
-                           </a>
-                       </li><!-- .nk-menu-item -->
-                       <li class="nk-menu-item">
-                           <a href="html/ecommerce/settings.html" class="nk-menu-link">
-                               <span class="nk-menu-icon"><em class="icon ni ni-opt-alt-fill"></em></span>
-                               <span class="nk-menu-text">Settings</span>
-                           </a>
-                       </li><!-- .nk-menu-item -->
-                       <li class="nk-menu-item">
-                           <a href="html/ecommerce/integration.html" class="nk-menu-link">
-                               <span class="nk-menu-icon"><em class="icon ni ni-server-fill"></em></span>
-                               <span class="nk-menu-text">Integration</span>
-                           </a>
-                       </li><!-- .nk-menu-item -->
                        <li class="nk-menu-heading">
                            <h6 class="overline-title text-primary-alt">Return to</h6>
                        </li><!-- .nk-menu-item -->

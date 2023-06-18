@@ -44,7 +44,7 @@ class loggedInNotification extends Notification
     {
         $userName = $this->user->name;
         return (new MailMessage)
-        ->subject('User Logged In')
+        ->subject('Admin Logged In')
         ->line("{$userName} has logged in successfully.")
         ->action('View Admin Dashboard', url('/admin/dashboard'))
         ->salutation('Thank you logging in');

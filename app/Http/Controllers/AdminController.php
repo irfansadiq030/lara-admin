@@ -64,4 +64,10 @@ class AdminController extends Controller
 
         return redirect()->route('login_form')->with('msg', 'Admin Created Successfully');
     }
+
+    // View Profile
+
+    public function admin_profile(){
+        return view('admin.admin-profile');
+    }
 }
