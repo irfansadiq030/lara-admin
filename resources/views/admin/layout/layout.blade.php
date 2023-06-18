@@ -10,7 +10,7 @@
     <!-- Fav Icon  -->
     <link rel="shortcut icon" href="./images/favicon.png">
     <!-- Page Title  -->
-    <title>e-Commerce Home | DashLite Admin Template</title>
+    <title> @yield('page_title') - Admin Dashboard</title>
     <!-- StyleSheets  -->
     <link rel="stylesheet" href="{{ asset('admin_assets/css/dashlite.css') }}">
     <link id="skin-default" rel="stylesheet" href="{{ asset('admin_assets/css/theme.css') }}">
@@ -33,7 +33,7 @@
                     <div class="container-fluid">
                         <div class="nk-content-inner">
                             <div class="nk-content-body">
-                               @yield('content')
+                                @yield('content')
                             </div>
                         </div>
                     </div>

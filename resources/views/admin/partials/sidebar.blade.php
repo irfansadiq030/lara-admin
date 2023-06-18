@@ -17,23 +17,32 @@
                <div class="nk-sidebar-menu" data-simplebar>
                    <ul class="nk-menu">
                        <li class="nk-menu-item">
-                           <a href="html/ecommerce/index.html" class="nk-menu-link">
+                           <a href="dashboard" class="nk-menu-link">
                                <span class="nk-menu-icon"><em class="icon ni ni-dashboard-fill"></em></span>
                                <span class="nk-menu-text">Dashboard</span>
                            </a>
                        </li><!-- .nk-menu-item -->
                        <li class="nk-menu-item">
-                           <a href="html/ecommerce/orders.html" class="nk-menu-link">
+                           <a href="dashboard" class="nk-menu-link">
                                <span class="nk-menu-icon"><em class="icon ni ni-bag-fill"></em></span>
                                <span class="nk-menu-text">Orders</span>
                            </a>
                        </li><!-- .nk-menu-item -->
-                       <li class="nk-menu-item">
-                           <a href="html/ecommerce/products.html" class="nk-menu-link">
-                               <span class="nk-menu-icon"><em class="icon ni ni-package-fill"></em></span>
-                               <span class="nk-menu-text">Products</span>
+                       <li class="nk-menu-item has-sub">
+                           <a href="#" class="nk-menu-link nk-menu-toggle" data-original-title="" title="">
+                               <span class="nk-menu-icon"><em class="icon ni ni-tag-fill"></em></span>
+                               <span class="nk-menu-text">Categories</span>
                            </a>
-                       </li><!-- .nk-menu-item -->
+                           <ul class="nk-menu-sub">
+                               <li class="nk-menu-item">
+                                   <a href="categories" class="nk-menu-link" data-original-title="" title=""><span class="nk-menu-text">View</span></a>
+                               </li>
+                               <li class="nk-menu-item">
+                                   <a href="add-category" class="nk-menu-link" data-original-title="" title=""><span class="nk-menu-text">Add New</span></a>
+                               </li>
+                               
+                           </ul><!-- .nk-menu-sub -->
+                       </li>
                        <li class="nk-menu-heading">
                            <h6 class="overline-title text-primary-alt">Return to</h6>
                        </li><!-- .nk-menu-item -->

@@ -70,4 +70,19 @@ class AdminController extends Controller
     public function admin_profile(){
         return view('admin.admin-profile');
     }
+
+    // Edit Profile
+
+    public function edit_profile(){
+
+        $admin_info = Auth::guard('admin')->user();
+
+        return view('admin.edit-profile',compact('admin_info'));
+    }
+
+    // Update Profile
+
+    public function update_profile(Request $request){
+        dd($request->all());
+    }
 }

@@ -1,4 +1,5 @@
 @extends('admin.layout.layout')
+@section('page_title','View Profile')
 
 @section('content')
 
@@ -98,7 +99,7 @@
                                     <div class="dropdown-menu dropdown-menu-right">
                                         <ul class="link-list-opt no-bdr">
                                             <li><a href="#"><em class="icon ni ni-camera-fill"></em><span>Change Photo</span></a></li>
-                                            <li><a href="#"><em class="icon ni ni-edit-fill"></em><span>Update Profile</span></a></li>
+                                            <li><a href="edit-profile"><em class="icon ni ni-edit-fill"></em><span>Update Profile</span></a></li>
                                         </ul>
                                     </div>
                                 </div>
