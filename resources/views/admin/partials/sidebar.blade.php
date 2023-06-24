@@ -22,12 +22,13 @@
                                <span class="nk-menu-text">Dashboard</span>
                            </a>
                        </li><!-- .nk-menu-item -->
-                       <li class="nk-menu-item">
+                       <!-- <li class="nk-menu-item">
                            <a href="dashboard" class="nk-menu-link">
                                <span class="nk-menu-icon"><em class="icon ni ni-bag-fill"></em></span>
                                <span class="nk-menu-text">Orders</span>
                            </a>
-                       </li><!-- .nk-menu-item -->
+                       </li> -->
+                       <!-- .nk-menu-item -->
                        <li class="nk-menu-item has-sub">
                            <a href="#" class="nk-menu-link nk-menu-toggle" data-original-title="" title="">
                                <span class="nk-menu-icon"><em class="icon ni ni-tag-fill"></em></span>

@@ -25,6 +25,7 @@ Route::prefix('admin')->group(function () {
 
         Route::get('categories',[CategoryController::class,'view_categories'])->name('categories');
         Route::get('add-category',[CategoryController::class,'add_category'])->name('add-category');
+        Route::post('add-category',[CategoryController::class,'create_category'])->name('create-category');
 
     });
 
