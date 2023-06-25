@@ -23,7 +23,7 @@
             </div>
         </div> -->
         <div class="row g-gs">
-            <div class="col-lg-10">
+            <div class="col-lg-8">
                 <div class="card h-100">
                     <div class="card-inner">
                         <div class="card-head">
@@ -41,6 +41,15 @@
                                 <label class="form-label" for="email-address">Slug</label>
                                 <div class="form-control-wrap">
                                     <input name="slug" type="text" class="form-control" id="email-address">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Status</label>
+                                <div class="form-control-wrap">
+                                    <select name="category_status" class="form-select select2-hidden-accessible" data-select2-id="3" tabindex="-1" aria-hidden="true">
+                                        <option value="1" data-select2-id="5">Active</option>
+                                        <option value="0" data-select2-id="18">Draft</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="form-group">

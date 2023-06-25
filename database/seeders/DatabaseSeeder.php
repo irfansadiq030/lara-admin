@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Admin;
+use App\Models\Category;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,7 +16,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Admin::factory(1)->create();
+        // \App\Models\Admin::factory(1)->create();
+        \App\Models\Category::factory(20)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',

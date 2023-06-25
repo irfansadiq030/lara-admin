@@ -616,7 +616,7 @@ pre code { font-size: inherit; color: inherit; word-break: normal; }
 
 .table { width: 100%; margin-bottom: 1rem; color: #526484; }
 
-.table th, .table td { padding: 0.5rem; vertical-align: top; border-top: 1px solid #dbdfea; }
+.table th, .table td { padding: 0.5rem; vertical-align: center; border-top: 1px solid #dbdfea; }
 
 .table thead th { vertical-align: bottom; border-bottom: 2px solid #dbdfea; }
 

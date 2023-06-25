@@ -9,20 +9,21 @@ class CategoryController extends Controller
 {
     // View Category
 
-    public function view_categories(){
+    public function index(){
 
-        return view('admin.categories');
+        $categories = Category::all();
+        return view('admin.categories',compact('categories'));
 
     }
 
     // Add New Category
 
-    public function add_category(){
+    public function create(){
         return view('admin.add-category');
     }
 
     // Create Category
-    public function create_category(Request $request)
+    public function store(Request $request)
     {
         // dd($request->input('category_title'));
 
@@ -30,6 +31,7 @@ class CategoryController extends Controller
         $category->title = $request->input('category_title');
         $category->slug = $request->input('slug');
         $category->description = $request->input('description');
+        $category->status = $request->input('category_status');
         $category->img = 'null';
 
         // Save
