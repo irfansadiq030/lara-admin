@@ -26,6 +26,10 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         // dd($request->input('category_title'));
+        $validated = $request->validate([
+            'category_title' => 'required',
+            'slug' => 'required|unique:categories',
+        ]);
 
         $category = new Category();
         $category->title = $request->input('category_title');

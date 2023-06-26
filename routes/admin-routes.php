@@ -2,12 +2,14 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
-
+use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+use App\Http\Middleware\RedirectIfAdminLogin;
 // Admin Route
 
 Route::prefix('admin')->group(function () {
 
-    Route::get('/login', [AdminController::class, 'index'])->name('login_form');
+    Route::get('/login', [AdminController::class, 'index'])->name('login_form')->middleware('RedirectIfAdminLogin');
     Route::post('admin.login', [AdminController::class, 'admin_login'])->name('admin.login');
     Route::get('logout', [AdminController::class, 'admin_logout'])->name('admin.logout');
     Route::get('register', [AdminController::class, 'register'])->name('admin.register');
@@ -26,6 +28,21 @@ Route::prefix('admin')->group(function () {
         Route::get('categories',[CategoryController::class, 'index'])->name('categories');
         Route::get('add-category',[CategoryController::class, 'create'])->name('add-category');
         Route::post('add-category',[CategoryController::class, 'store'])->name('create-category');
+
+        // Generate Slug
+        Route::get('/get-slug', function (Request $request) {
+            $slug = '';
+            if (!empty($request->input('category_title'))) {
+                $slug = Str::slug($request->category_title);
+            }
+            
+
+            return response()->json([
+                'status' =>'true',
+                'slug' => $slug
+            ]);
+
+        })->name("get-slug"); 
 
     });
 

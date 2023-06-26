@@ -29,18 +29,32 @@
                         <div class="card-head">
                             <h5 class="card-title">Category Info</h5>
                         </div>
+                        @if ($errors->any())
+                        <div class="alert alert-pro alert-danger alert-dismissible">
+                            <div class="alert-text">
+                                <h6>Errors!</h6>
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                    <li class="text-danger">{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            <button class="close" data-dismiss="alert"></button>
+                        </div>
+                        @endif
+
                         <form action="{{ route('create-category') }}" method="POST">
                             @csrf
                             <div class="form-group">
                                 <label class="form-label" for="full-name">Category Title</label>
                                 <div class="form-control-wrap">
-                                    <input name="category_title" type="text" class="form-control" id="full-name">
+                                    <input name="category_title" type="text" class="form-control" id="category_title">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="form-label" for="email-address">Slug</label>
+                                <label class="form-label" for="cat_slug">Slug</label>
                                 <div class="form-control-wrap">
-                                    <input name="slug" type="text" class="form-control" id="email-address">
+                                    <input name="slug" type="text" class="form-control" id="cat_slug">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -69,5 +83,32 @@
     </div><!-- .nk-block -->
 
 </div>
+
+@endsection
+
+@section('custom-js')
+
+<script>
+    $(document).ready(function() {
+        $("#category_title").change(function() {
+            // alert($(this).val());
+            // const element = $(this);
+            $.ajax({
+                url: '{{ route('get-slug') }}',
+                type: 'get',
+                data: {
+                    category_title: $(this).val()
+                },
+                dataType: 'json',
+                success: function(response) {
+                    if (response['status']) {
+                        $("#cat_slug").val(response['slug']);
+                    }
+                }
+
+            });
+        })
+    })
+</script>
 
 @endsection
