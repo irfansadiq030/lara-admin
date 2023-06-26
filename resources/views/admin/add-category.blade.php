@@ -23,7 +23,7 @@
             </div>
         </div> -->
         <div class="row g-gs">
-            <div class="col-lg-8">
+            <div class="col-lg-12">
                 <div class="card h-100">
                     <div class="card-inner">
                         <div class="card-head">
@@ -45,18 +45,21 @@
 
                         <form action="{{ route('create-category') }}" method="POST">
                             @csrf
-                            <div class="form-group">
-                                <label class="form-label" for="full-name">Category Title</label>
-                                <div class="form-control-wrap">
-                                    <input name="category_title" type="text" class="form-control" id="category_title">
+                            <div class="row mb-3">
+                                <div class="col-6">
+                                    <label class="form-label" for="full-name">Category Title</label>
+                                    <div class="form-control-wrap">
+                                        <input name="category_title" type="text" class="form-control" id="category_title">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label" for="cat_slug">Slug</label>
+                                    <div class="form-control-wrap">
+                                        <input name="slug" type="text" class="form-control" id="cat_slug">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label class="form-label" for="cat_slug">Slug</label>
-                                <div class="form-control-wrap">
-                                    <input name="slug" type="text" class="form-control" id="cat_slug">
-                                </div>
-                            </div>
+
                             <div class="form-group">
                                 <label class="form-label">Status</label>
                                 <div class="form-control-wrap">
@@ -70,6 +73,16 @@
                                 <label class="form-label" for="email-address">Description</label>
                                 <div class="form-control-wrap">
                                     <textarea name="description" type="text" class="form-control" id="email-address" rows="1"> </textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Upload Category Image</label>
+                                <div class="dropzone dz-clickable" data-accepted-files="image/*">
+                                    <div class="dz-message" data-dz-message="">
+                                        <span class="dz-message-text">Drag and drop file</span>
+                                        <span class="dz-message-or">or</span>
+                                        <button class="btn btn-primary">SELECT</button>
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -103,6 +116,8 @@
                 success: function(response) {
                     if (response['status']) {
                         $("#cat_slug").val(response['slug']);
+                    }else{
+                        alert();
                     }
                 }
 
