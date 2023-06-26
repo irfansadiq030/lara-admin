@@ -22,7 +22,8 @@ class CategoryFactory extends Factory
             'title' =>  $title,
             'description' => fake()->sentence,
             'slug' => Str::slug($title),
-            'img'=> 'Null'
+            'img'=> 'Null',
+            'status' => fake()->boolean()
         ];
     }
 }

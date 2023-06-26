@@ -10,7 +10,8 @@ class CategoryController extends Controller
 {
     // View Category
 
-    public function index(Request $request){
+    public function index(Request $request)
+    {
 
         if ($request->ajax()) {
             $data = Category::select('*');
@@ -18,7 +19,18 @@ class CategoryController extends Controller
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {
                     $editUrl = $row->id;
-                    $actionBtn = '<a href="blogs.edit' . $editUrl . '" class="edit btn btn-success btn-sm">Edit</a> <a href="javascript:void(0)" class="delete btn btn-danger btn-sm">Delete</a>';
+                    $actionBtn = '<td class="tb-tnx-action">
+                                        <div class="dropdown">
+                                            <a class="text-soft dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown" aria-expanded="false"><em class="icon ni ni-more-h"></em></a>
+                                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-xs" style="">
+                                                <ul class="link-list-plain">
+                                                    <li><a href="#">View</a></li>
+                                                    <li><a href="category.edit.'. $editUrl.'">Edit</a></li>
+                                                    <li><a href="#">Remove</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </td>';
                     return $actionBtn;
                 })
                 ->rawColumns(['action'])
@@ -27,12 +39,12 @@ class CategoryController extends Controller
 
         // $categories = Category::all();
         return view('admin.categories');
-
     }
 
     // Add New Category
 
-    public function create(){
+    public function create()
+    {
         return view('admin.add-category');
     }
 
@@ -55,6 +67,6 @@ class CategoryController extends Controller
         // Save
         $category->save();
 
-        return redirect('admin/dashboard')->with('msg','Category Added Successfuly!');
+        return redirect('admin/dashboard')->with('msg', 'Category Added Successfuly!');
     }
 }

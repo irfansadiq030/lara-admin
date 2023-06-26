@@ -100,11 +100,22 @@
                 },
                 {
                     data: 'status',
-                    name: 'status'
+                    name: 'status',
+                    render: function(data) {
+
+                        let statusText = data === 0 ? 'Draft' : 'Active';
+                        let statusClass = data === 0 ? 'badge-danger' : 'badge-success';
+
+                        return '<td class="nk-tb-col tb-col-sm">' +
+                            '<span class="tb-product">' +
+                            '<span class="badge badge-pill ' + statusClass + '">' + statusText + '</span>' +
+                            '</span>' +
+                            '</td>';
+                    }
                 },
                 {
                     data: 'action',
-                    name: 'action'
+                    name: 'action',
                 },
             ],
             dom: domStructure,
