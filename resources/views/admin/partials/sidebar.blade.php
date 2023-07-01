@@ -36,12 +36,12 @@
                            </a>
                            <ul class="nk-menu-sub">
                                <li class="nk-menu-item">
-                                   <a href="categories" class="nk-menu-link" data-original-title="" title=""><span class="nk-menu-text">View</span></a>
+                                   <a href="{{ route('categories') }}" class="nk-menu-link" data-original-title="" title=""><span class="nk-menu-text">View</span></a>
                                </li>
                                <li class="nk-menu-item">
-                                   <a href="add-category" class="nk-menu-link" data-original-title="" title=""><span class="nk-menu-text">Add New</span></a>
+                                   <a href="{{ route('add-category') }}" class="nk-menu-link" data-original-title="" title=""><span class="nk-menu-text">Add New</span></a>
                                </li>
-                               
+
                            </ul><!-- .nk-menu-sub -->
                        </li>
                        <li class="nk-menu-heading">

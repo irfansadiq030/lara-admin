@@ -26,8 +26,8 @@ class AdminController extends Controller
 
 
             // Send email notification after the user logs in successfully.
-            $user = Auth::guard('admin')->user();
-            Notification::send($user, new loggedInNotification($user));
+            // $user = Auth::guard('admin')->user();
+            // Notification::send($user, new loggedInNotification($user));
 
             return redirect()->route('admin.dashboard')->with('msg', 'Admin Logged in Successfully');
         } else {

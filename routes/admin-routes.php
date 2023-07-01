@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\TempImagesController;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Middleware\RedirectIfAdminLogin;
@@ -28,6 +29,12 @@ Route::prefix('admin')->group(function () {
         Route::get('categories',[CategoryController::class, 'index'])->name('categories');
         Route::get('add-category',[CategoryController::class, 'create'])->name('add-category');
         Route::post('add-category',[CategoryController::class, 'store'])->name('create-category');
+        Route::get('/categories/{id}/edit',[CategoryController::class, 'edit'])->name('categories.edit');
+        Route::post('/update-category',[CategoryController::class, 'update'])->name('update-category');
+
+        // Temp Image Uploading
+        Route::post('upload-temp-image', [TempImagesController::class, 'create'])->name('temp.images.create');
+
 
         // Generate Slug
         Route::get('/get-slug', function (Request $request) {
