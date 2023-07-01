@@ -31,6 +31,7 @@ Route::prefix('admin')->group(function () {
         Route::post('add-category',[CategoryController::class, 'store'])->name('create-category');
         Route::get('/categories/{id}/edit',[CategoryController::class, 'edit'])->name('categories.edit');
         Route::post('/update-category',[CategoryController::class, 'update'])->name('update-category');
+        Route::get('/categories/{id}/delete',[CategoryController::class, 'delete'])->name('delete-category');
 
         // Temp Image Uploading
         Route::post('upload-temp-image', [TempImagesController::class, 'create'])->name('temp.images.create');

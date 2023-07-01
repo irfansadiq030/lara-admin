@@ -96,7 +96,10 @@
                 },
                 {
                     data: 'img',
-                    name: 'img'
+                    name: 'img',
+                    render: function(data) {
+                        return '<td> <img class="rounded" width="60" src="{{ asset("uploads/category/") }}/' + data + '" alt=""></td>';
+                    }
                 },
                 {
                     data: 'status',

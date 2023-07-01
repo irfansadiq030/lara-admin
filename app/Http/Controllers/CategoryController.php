@@ -22,6 +22,7 @@ class CategoryController extends Controller
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {
                     $editUrl = route('categories.edit', $row->id);
+                    $deleteUrl = route('delete-category', $row->id);
                     $actionBtn = '<td class="tb-tnx-action">
                                         <div class="dropdown">
                                             <a class="text-soft dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown" aria-expanded="false"><em class="icon ni ni-more-h"></em></a>
@@ -29,7 +30,7 @@ class CategoryController extends Controller
                                                 <ul class="link-list-plain">
                                                     <li><a href="#">View</a></li>
                                                     <li><a href="' . $editUrl . '">Edit</a></li>
-                                                    <li><a href="#">Remove</a></li>
+                                                    <li><a href="' . $deleteUrl . '">Remove</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -158,5 +159,19 @@ class CategoryController extends Controller
 
 
         return redirect('admin/categories')->with('msg', 'Category updated successfully!');
+    }
+
+    // Delete Category
+    public function delete($id)
+    {
+        $category = Category::find($id);
+
+        if (!$category) {
+            return redirect()->route('categories')->with('error', 'Category not found!');
+        }
+
+        $category->delete();
+
+        return redirect()->route('categories')->with('success', 'Category deleted successfully!');
     }
 }
