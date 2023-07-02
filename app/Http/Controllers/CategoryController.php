@@ -28,9 +28,9 @@ class CategoryController extends Controller
                                             <a class="text-soft dropdown-toggle btn btn-icon btn-trigger" data-toggle="dropdown" aria-expanded="false"><em class="icon ni ni-more-h"></em></a>
                                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-xs" style="">
                                                 <ul class="link-list-plain">
-                                                    <li><a href="#">View</a></li>
+                                                    <li><a href="#" onclick="confirmDelete()">View</a></li>
                                                     <li><a href="' . $editUrl . '">Edit</a></li>
-                                                    <li><a href="' . $deleteUrl . '">Remove</a></li>
+                                                    <li><a href="' . $deleteUrl . '" >Remove</a></li>
                                                 </ul>
                                             </div>
                                         </div>

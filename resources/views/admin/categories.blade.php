@@ -57,7 +57,7 @@
     </div>
 
 </div><!-- .components-preview -->
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 @endsection
 
 @section('custom-js')
@@ -144,6 +144,49 @@
         });
 
     });
+
+    const confirmDelete = () => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Send the delete request
+                fetch(uri, {
+                        method: 'Get',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            // Add any additional headers if needed
+                        },
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                            );
+                            // Perform any additional actions after successful deletion
+                        } else {
+                            throw new Error('Failed to delete the file.');
+                        }
+                    })
+                    .catch(error => {
+                        Swal.fire(
+                            'Error!',
+                            error.message,
+                            'error'
+                        );
+                        // Handle error or display error message
+                    });
+            }
+        });
+    };
 </script>
 
 @endsection

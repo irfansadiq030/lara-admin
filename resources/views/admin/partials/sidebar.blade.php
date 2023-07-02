@@ -48,13 +48,13 @@
                            <h6 class="overline-title text-primary-alt">Return to</h6>
                        </li><!-- .nk-menu-item -->
                        <li class="nk-menu-item">
-                           <a href="html/index.html" class="nk-menu-link">
+                           <a href="#" class="nk-menu-link">
                                <span class="nk-menu-icon"><em class="icon ni ni-dashlite-alt"></em></span>
                                <span class="nk-menu-text">Main Dashboard</span>
                            </a>
                        </li><!-- .nk-menu-item -->
                        <li class="nk-menu-item">
-                           <a href="html/components.html" class="nk-menu-link">
+                           <a href="#" class="nk-menu-link">
                                <span class="nk-menu-icon"><em class="icon ni ni-layers-fill"></em></span>
                                <span class="nk-menu-text">All Components</span>
                            </a>
